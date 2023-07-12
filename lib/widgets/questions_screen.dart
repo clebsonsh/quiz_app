@@ -13,7 +13,7 @@ class QuestionsScreen extends StatefulWidget {
 class _QuestionsScreenState extends State<QuestionsScreen> {
   @override
   Widget build(BuildContext context) {
-    final QuizQuestion currentQuestion = questions[0];
+    final QuizQuestion currentQuestion = questions[3];
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -29,10 +29,12 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               textAlign: TextAlign.center,
             ),
           ),
-          AnswerButton(
-            answerText: currentQuestion.answers[0],
-            onTap: () {},
-          ),
+          ...currentQuestion.answers.map((answer) {
+            return AnswerButton(
+              answerText: answer,
+              onTap: () {},
+            );
+          }),
         ],
       ),
     );
