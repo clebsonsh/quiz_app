@@ -20,9 +20,6 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
   var currentQuestionIndex = 0;
 
   void answerQuestion(String selectedAnswer) {
-    if (currentQuestionIndex == questions.length - 1) {
-      return;
-    }
     setState(() {
       currentQuestionIndex++;
     });
