@@ -45,16 +45,16 @@ class _QuizState extends State<Quiz> {
     Widget screenWidget = StartScreen(switchScreen);
 
     switch (activeScreen) {
-      case 'start-screen':
-        screenWidget = StartScreen(switchScreen);
-        break;
       case 'questions-screen':
         screenWidget = QuestionsScreen(
           onSelectAnswer: chooseAnswer,
         );
         break;
       case 'results-screen':
-        screenWidget = ResultsScreen(onRestartQuiz: restartQuiz);
+        screenWidget = ResultsScreen(
+          onRestartQuiz: restartQuiz,
+          chosenAnswers: selectedAnswers,
+        );
         break;
       default:
         screenWidget = StartScreen(switchScreen);
