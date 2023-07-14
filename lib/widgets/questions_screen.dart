@@ -13,29 +13,30 @@ class QuestionsScreen extends StatefulWidget {
 class _QuestionsScreenState extends State<QuestionsScreen> {
   @override
   Widget build(BuildContext context) {
-    final QuizQuestion currentQuestion = questions[3];
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
-            child: Text(
+    final QuizQuestion currentQuestion = questions[0];
+    return Container(
+      margin: const EdgeInsets.all(40),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
               currentQuestion.text,
               style: const TextStyle(
-                fontSize: 24,
+                fontSize: 18,
                 color: Colors.white,
               ),
               textAlign: TextAlign.center,
             ),
-          ),
-          ...currentQuestion.answers.map((answer) {
-            return AnswerButton(
-              answerText: answer,
-              onTap: () {},
-            );
-          }),
-        ],
+            ...currentQuestion.answers.map((answer) {
+              return AnswerButton(
+                answerText: answer,
+                onTap: () {},
+              );
+            }),
+          ],
+        ),
       ),
     );
   }

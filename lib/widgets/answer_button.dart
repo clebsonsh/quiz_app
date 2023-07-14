@@ -14,8 +14,9 @@ class AnswerButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        const SizedBox(height: 15),
+        const SizedBox(height: 20),
         ElevatedButton(
           onPressed: onTap,
           style: ElevatedButton.styleFrom(
@@ -23,7 +24,6 @@ class AnswerButton extends StatelessWidget {
             foregroundColor: Colors.white,
             padding: const EdgeInsets.symmetric(
               vertical: 20,
-              horizontal: 40,
             ),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(40),
