@@ -12,7 +12,7 @@ class QuestionsSummary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 300,
+      height: 400,
       child: SingleChildScrollView(
         child: Column(
           children: summaryData.map(
@@ -65,6 +65,7 @@ class QuestionsSummary extends StatelessWidget {
                             color: const Color.fromARGB(255, 123, 124, 207),
                           ),
                         ),
+                        const SizedBox(height: 20),
                       ],
                     ),
                   ),
